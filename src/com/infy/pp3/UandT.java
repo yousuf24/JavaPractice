@@ -70,6 +70,9 @@ public class UandT {
 		
 		int k=0;
 		if(allPermutations.contains(two))outputArray[k++]="YES";
+		else outputArray[k++]="NO";
+		
+		System.out.println(Arrays.toString(outputArray));
 		
 		
 

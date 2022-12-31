@@ -1,5 +1,6 @@
 package com.infy.pp3;
 
+import java.util.Arrays;
 
 public class Solution_LargeRegion {
 	
@@ -10,6 +11,7 @@ public class Solution_LargeRegion {
 		int toR=1;	
 		for(int r=row-1;r<=row+1;r++) {
 			for(int c=column-1;c<=column+1;c++) {
+				
 				if(r!=row || c !=column)
 				toR+=getSize(r,c,matrix);
 				
@@ -22,10 +24,12 @@ public class Solution_LargeRegion {
 	
 	public static void getBiggestRegion(int[][] matrix) {
 		int maxSize=Integer.MIN_VALUE;
+		
 		for(int row=0;row<matrix.length;row++) {
 			for(int column=0;column<matrix[row].length;column++) {
 				if(matrix[row][column]==1) {
 					int size=getSize(row,column,matrix);
+					System.out.println(size);
 					maxSize=Math.max(size, maxSize);
 				}
 			}
@@ -35,7 +39,10 @@ public class Solution_LargeRegion {
 	}
 
 	public static void main(String[] args) {
-		int matrix[][]= {{0,0,0,1,1,0,0},{0,1,0,0,1,1,0},{1,1,0,1,0,0,1},{0,0,0,0,0,1,0},{1,1,0,0,0,0,0},{0,0,0,1,0,0,0}}; 
+		int matrix[][]= {{0,0,0,1,1,0,0},{0,1,0,0,1,1,0},{1,1,0,1,0,0,1},{0,0,0,0,0,1,0},{1,1,0,0,0,0,0},{0,0,0,1,0,0,0}};
+		for(int[] each:matrix) {
+		System.out.println(Arrays.toString(each));
+	}
 		getBiggestRegion(matrix);
 
 	}

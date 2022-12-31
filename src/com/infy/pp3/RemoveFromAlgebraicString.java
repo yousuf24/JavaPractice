@@ -44,7 +44,7 @@ public class RemoveFromAlgebraicString {
 	public static void main(String[] args) {
 		String input="(a-(b+c)+d)"; //problem is to solve the algebraic braces interchanging - & +
 		//main logic when - is encountered before ( then flip the operator with in the braces use Stack<Integer> for toggling operations
-		System.out.println(solve(input));
+		System.out.println(solve(input).replace('\0'+"", ""));
 
 	}
 
